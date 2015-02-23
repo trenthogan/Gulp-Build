@@ -48,7 +48,7 @@ gulp.task('sass', function () {
 
      //Minified Css
      gulp.src( paths.styles.src )
-    .pipe( plugins.rubySass({ style: 'compressed', loadPath : __dirname + paths.styles.directory }))
+    .pipe( plugins.rubySass({ style: 'compressed', loadPath : __dirname + paths.styles.directory, 'sourcemap=none': true }))
     .pipe( plugins.rename('style.min.css') )
     .pipe( gulp.dest( paths.styles.dest ) )
 
